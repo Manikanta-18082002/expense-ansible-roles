@@ -20,7 +20,7 @@
 - name: check DB connection 
   community.mysql.mysql_info: # Using Community Module (Internet)
     login_user: root
-    login_password: "{{ mysql_root_password }}" 
+    login_password: "{{ mysql_root_password }}" # In vars/ main.yaml
     # This var checks every where like: Play level, task level all.... finally in vars/main.yaml (Founded)
     login_host: "{{ login_host }}"
     filter: version
