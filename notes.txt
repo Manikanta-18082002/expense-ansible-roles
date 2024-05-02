@@ -9,3 +9,6 @@ Vault password:
 mysql_root_password: ExpenseApp@1
 
 ansible-vault edit credentials.yaml
+
+
+ ansible-playbook db.yaml --ask-vault-pass
