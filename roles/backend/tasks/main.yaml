@@ -15,22 +15,27 @@
 - name: create expense user
   ansible.builtin.user: # Hetrogenous, Works for all Distributions (Ex: .package)
     name: expense
+    
+- name: run app pre-requisites
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-pre-req
 
-- name: create app directory
-  ansible.builtin.file:
-    path: /app
-    state: directory
+# - name: create app directory
+#   ansible.builtin.file:
+#     path: /app
+#     state: directory
   
-- name: download backend code
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
-    dest: /tmp/backend.zip
+# - name: download backend code
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+#     dest: /tmp/backend.zip
 
-- name: unzip backend code
-  ansible.builtin.unarchive:  #Unziping
-    src: /tmp/backend.zip #src:  by default checks file in ansible server (We get error), and unZip in remote machine
-    dest: /app
-    remote_src: yes #Saying: Un-Archive a file that is already in the remote machine
+# - name: unzip backend code
+#   ansible.builtin.unarchive:  #Unziping
+#     src: /tmp/backend.zip #src:  by default checks file in ansible server (We get error), and unZip in remote machine
+#     dest: /app
+#     remote_src: yes #Saying: Un-Archive a file that is already in the remote machine
 
 - name: install npm dependencies
   ansible.builtin.command: npm install #--> Should be installed where package.json is located (backend -> /app/)
