@@ -1,0 +1,6 @@
+- name: configure DB Server
+  hosts: db
+  become: yes
+  roles: # Checks with roles folder and checks for db folder...
+  - db
+
