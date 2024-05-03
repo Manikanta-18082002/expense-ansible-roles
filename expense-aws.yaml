@@ -1,12 +1,12 @@
 - name: create ec2 and r53 records
-hosts: localhost
-vars:
-  zone: daws78s.online
-  instances:
-  - db
-  - backend
-  - frontend
-tasks:
+  hosts: localhost
+  vars:
+    zone: daws78s.online
+    instances:
+    - db
+    - backend
+    - frontend
+  tasks:
 - name: create ec2 instances
   amazon.aws.ec2_instance:
     instance_type: t2.micro
@@ -33,4 +33,5 @@ tasks:
     ttl: 1
   loop: "{{ ec2_instances_info.results }}"
 
-
+  
+ 
