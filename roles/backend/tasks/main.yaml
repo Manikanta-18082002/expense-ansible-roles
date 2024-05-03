@@ -51,7 +51,7 @@
     src: backend.service.j2 #jinja2
     dest: /etc/systemd/system/backend.service
   notify:
-  - restart systemd
+  - restart systemd  # Myself created handler and restarted systemd :) -->I checked and working fine)
 
 - name: install python mysql dependencies
   ansible.builtin.pip: 
