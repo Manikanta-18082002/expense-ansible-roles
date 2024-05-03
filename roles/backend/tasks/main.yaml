@@ -16,6 +16,8 @@
   ansible.builtin.user: # Hetrogenous, Works for all Distributions (Ex: .package)
     name: expense
     
+#Instead of 4 modules: delete existing directory, create new directory, download code, extract code
+# Use below 1 module 
 - name: run app pre-requisites
   ansible.builtin.import_role:
     name: common
@@ -43,8 +45,8 @@
     chdir: /app #Before npm install go to this dir and install
 
 - name: copy backend service
-  ansible.builtin.template: # ToFrom template folder (backend.service) from Ansible server  --> to Remote Machine/server
-    src: backend.service.j2
+  ansible.builtin.template: # From templates folder (backend.service) from Ansible server  --> to Remote Machine/server
+    src: backend.service.j2 #jinja2
     dest: /etc/systemd/system/backend.service
 
 - name: install python mysql dependencies

@@ -36,11 +36,14 @@
 # If change in configuration then only restart, use Ansible Handlers
 - name: copy backend conf
   ansible.builtin.template: # Copying file (backend.service) from Ansible server  --> to Remote Machine/server
-    src: expense.conf.j2
+    src: expense.conf.j2 #jinja2
     dest: /etc/nginx/default.d/expense.conf
   notify:
   - restart nginx #From: handlers-> main.yaml -> name
+# Re-start? We did changes in config file's (Ex: restarting our laptop/mobile when update)
 
+
+#Below code in handlers folder
 # - name: restart nginx
 #   ansible.builtin.service:
 #     name: nginx
