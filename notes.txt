@@ -42,6 +42,7 @@ ansible-inventory -i aws_ec2.yaml --graph (Command to connect AWS and Fetch All 
 
 import the required Python library (botocore and boto3) --> pip3.9 install botocore boto3
 
-
+ansible-playbook -vvv -i aws_ec2.yaml -e anisble_user=ec2-user -e ansible_password=DevOps321 dynamic.yaml
+(-vvv for debugging purpose)
 
 
