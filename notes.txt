@@ -28,3 +28,5 @@ Select or skip tags when you run your playbook.
 --tags tagged - run only tasks with at least one tag
 
 --tags untagged - run only tasks with no tags
+
+To run tags:  ansible-playbook backend.yaml --ask-vault-pass -t deployment
