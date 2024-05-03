@@ -38,9 +38,9 @@ How Ansible login to AWS?
 - Go to Super Putty --> aws configure (Provide 2 Keys)
 - aws s3 ls (To list buckets)
 
+ansible-inventory -i aws_ec2.yaml --graph (Command to connect AWS and Fetch All Instances)
 
-
-
+import the required Python library (botocore and boto3) --> pip3.9 install botocore boto3
 
 
 
