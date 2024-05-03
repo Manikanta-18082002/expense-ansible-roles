@@ -12,7 +12,7 @@ keyed_groups:
 # Till above it takes all instances with Name
 
 filters:
-  tag:Name: "Backend*"
+  tag:Name: "backend*"
 
 compose:
   #This sets the ansible_host variable to connect with IP Address with out changing the hostname
