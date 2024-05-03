@@ -12,3 +12,19 @@ ansible-vault edit credentials.yaml
 
 
  ansible-playbook db.yaml --ask-vault-pass
+
+ Tags
+If you have a large playbook, it may be useful to run only specific parts of it instead of running the entire playbook. You can do this with Ansible tags. Using tags to execute or skip selected tasks is a two-step process:
+Add tags to your tasks, either individually or with tag inheritance from a block, play, role, or import.
+
+Select or skip tags when you run your playbook.
+
+--tags all - run all tasks, ignore tags (default behavior)
+
+--tags tag1,tag2 - run only tasks with either the tag tag1 or the tag tag2
+
+--skip-tags tag3,tag4 - run all tasks except those with either the tag tag3 or the tag tag4
+
+--tags tagged - run only tasks with at least one tag
+
+--tags untagged - run only tasks with no tags
