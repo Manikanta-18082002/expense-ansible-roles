@@ -1,0 +1,5 @@
+# This file name should be this: aws_ec2.yaml
+
+plugin: amazon.aws.aws_ec2 # Ansible takes this plugin and connect to AWS
+regions:
+- us-east-1

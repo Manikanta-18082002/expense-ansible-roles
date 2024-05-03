@@ -30,3 +30,18 @@ Select or skip tags when you run your playbook.
 --tags untagged - run only tasks with no tags
 
 To run tags:  ansible-playbook backend.yaml --ask-vault-pass -t deployment
+
+
+How Ansible login to AWS?
+- Create IAM user role
+- Note Access & Secrete Keys
+- Go to Super Putty --> aws configure (Provide 2 Keys)
+- aws s3 ls (To list buckets)
+
+
+
+
+
+
+
+
